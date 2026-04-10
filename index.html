@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sane's Beauty Boutique</title>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Sane's Beauty Boutique</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Elevate Your Beauty</h2>
+        <p>Luxury Hair • Nails • Styling Experience</p>
+        <a href="#booking" class="btn">Book Now</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <div class="about-text">
+        <h2>Our Story</h2>
+        <p>
+            At Sane’s Beauty Boutique, beauty is more than a service — it’s an experience.
+            We bring creativity, precision, and passion to every client. From sleek styles
+            to bold transformations, we make sure you leave feeling confident and beautiful.
+        </p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371">
+        <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc">
+        <img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+
+        <div class="card">
+            <h3>Hair Styling</h3>
+            <p>Sleek ponytails, treatments & premium styling</p>
+        </div>
+
+        <div class="card">
+            <h3>Braids</h3>
+            <p>Protective styles with clean, detailed finishing</p>
+        </div>
+
+        <div class="card">
+            <h3>Nails</h3>
+            <p>Modern nail art, gel & acrylic perfection</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+    <h2>Book Appointment</h2>
+
+    <form id="bookingForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+        <button type="submit">Confirm Booking</button>
+    </form>
+
+    <p id="status"></p>
+</section>
+
+<footer>
+    <p>© 2026 Sane's Beauty Boutique • Luxury Experience</p>
+</footer>
+
+<script>
+const bookedSlots = [
+    { date: "2026-04-20", times: ["10:00", "11:00"] }
+];
+
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const status = document.getElementById("status");
+
+    const day = bookedSlots.find(d => d.date === date);
+
+    if (day && day.times.includes(time)) {
+        status.innerText = "❌ This slot is fully booked.";
+        status.style.color = "red";
+    } else {
+        status.innerText = "✅ Booking successful!";
+        status.style.color = "limegreen";
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1000;
+}
+
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9") center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    background: rgba(0,0,0,0.6);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h2 {
+    font-size: 50px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+/* ABOUT */
+.about {
+    padding: 100px 40px;
+    text-align: center;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px;
+}
+
+.card {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    padding: 30px;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+}
+
+/* BOOKING */
+#booking {
+    padding: 80px;
+    text-align: center;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: auto;
+}
+
+form input, form button {
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+form button {
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
